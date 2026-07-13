@@ -1,0 +1,25 @@
+# Domains commonly false-flagged by aggressive blocklists.
+# Add more here as you discover breakage in Pi-hole's Query Log.
+
+# CDNs / infrastructure
+cdn.jsdelivr.net
+cdnjs.cloudflare.com
+fonts.googleapis.com
+fonts.gstatic.com
+ajax.googleapis.com
+
+# Payment processors (breaking these breaks checkouts)
+js.stripe.com
+checkout.stripe.com
+www.paypalobjects.com
+www.paypal.com
+
+# Common login/auth flows
+accounts.google.com
+login.microsoftonline.com
+appleid.apple.com
+
+# Streaming (frequently over-blocked by aggressive lists)
+netflix.com
+nflxvideo.net
+media.amazon.com

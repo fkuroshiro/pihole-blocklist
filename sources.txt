@@ -1,0 +1,20 @@
+# Curated Pi-hole blocklist sources
+# Chosen for strong coverage with low false-positive rates.
+# Categories: core ads/tracking, privacy, malware/phishing.
+# Avoids overly aggressive lists (e.g. hagezi "ultimate") that tend to break sites.
+
+# --- Core ads & general tracking ---
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+https://v.firebog.net/hosts/AdguardDNS.txt
+https://v.firebog.net/hosts/Easylist.txt
+
+# --- Privacy / analytics tracking ---
+https://v.firebog.net/hosts/Easyprivacy.txt
+
+# --- Malware / phishing / scam protection ---
+https://phishing.army/download/phishing_army_blocklist_extended.txt
+https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/pro.txt
+
+# --- Cryptomining / coin miners ---
+https://raw.githubusercontent.com/anudeepND/blacklist/master/CoinMiner.txt
