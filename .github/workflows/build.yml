@@ -1,0 +1,28 @@
+name: Rebuild blocklist
+
+on:
+  schedule:
+    - cron: "0 4 * * *"  # daily at 4am UTC
+  workflow_dispatch: {}   # allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build hosts.txt
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add hosts.txt
+          git diff --staged --quiet || git commit -m "Auto-update blocklist $(date -u +%Y-%m-%d)"
+          git push
